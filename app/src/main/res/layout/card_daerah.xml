@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_daerah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Daerah"
+        android:layout_marginLeft="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:fontFamily="@font/eina03_semi_bold"
+        android:textSize="22sp"
+        android:textColor="@color/colorTextPrimaryDark"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/box_data"
+        android:gravity="center"
+        android:layout_below="@+id/tv_daerah"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/eina03_semi_bold"
+                android:text="Kasus Positif"
+                android:textAlignment="center"
+                android:textColor="@color/colorKasus"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_kasus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/eina03_bold"
+                android:text="00000"
+                android:textAlignment="center"
+                android:textColor="@color/colorKasus"
+                android:textSize="@dimen/_22sdp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/eina03_semi_bold"
+                android:text="Sembuh"
+                android:textAlignment="center"
+                android:textColor="@color/colorSembuh"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_sembuh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/eina03_bold"
+                android:text="000"
+                android:textAlignment="center"
+                android:textColor="@color/colorSembuh"
+                android:textSize="@dimen/_22sdp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/eina03_semi_bold"
+                android:text="Meninggal"
+                android:textAlignment="center"
+                android:textColor="@color/colorMeninggal"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_meninggal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/eina03_bold"
+                android:text="0000"
+                android:textAlignment="center"
+                android:textColor="@color/colorMeninggal"
+                android:textSize="@dimen/_22sdp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

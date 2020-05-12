@@ -5,9 +5,13 @@
     <color name="colorAccent">#03DAC5</color>
 
     //IN USE
+    <color name="colorPrimaryLight">#9B2774</color>
     <color name="colorPrimaryBg">#631646</color>
     <color name="colorItem">#FF8B0D</color>
     <color name="colorForegroundWhite">#FDFFF0</color>
     <color name="colorBackGroundWhite">#E6E8E0</color>
     <color name="colorTextPrimaryDark">#333333</color>
+    <color name="colorSembuh">#166138</color>
+    <color name="colorKasus">#F8AD1E</color>
+    <color name="colorMeninggal">#B11E31</color>
 </resources>

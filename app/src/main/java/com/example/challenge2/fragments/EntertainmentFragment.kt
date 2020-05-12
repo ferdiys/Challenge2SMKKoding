@@ -1,13 +1,14 @@
-package com.example.challenge2
+package com.example.challenge2.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.challenge2.R
 import org.jetbrains.annotations.Nullable
 
-class HomeFragment : Fragment() {
+class EntertainmentFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -15,7 +16,8 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_home,
+        return inflater.inflate(
+            R.layout.fragment_entertainment,
             container, false)
     }
     override fun onViewCreated(

@@ -16,11 +16,16 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1.5dp"
-        android:background="#F5F5F5"></View>
+        android:background="#F5F5F5"/>
+
+
 
     <com.google.android.material.tabs.TabLayout
+        android:theme="@style/Widget.MaterialComponents.TabLayout"
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        app:layout_collapseMode="pin"
+        app:tabGravity="fill"/>
 
 </LinearLayout>

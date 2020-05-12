@@ -7,8 +7,8 @@ import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    val menuTeks = arrayOf("Kasus", "Hiburan", "Bantuan")
-    val menuIcon = arrayOf(R.drawable.ic_home_black_24dp, R.drawable.ic_call_black_24dp, R.drawable.ic_call_black_24dp)
+    val menuTeks = arrayOf("Kasus","Informasi","Bantuan","Hiburan")
+    val menuIcon = arrayOf(R.drawable.icon_virus, R.drawable.info, R.drawable.phone, R.drawable.hiburan)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
