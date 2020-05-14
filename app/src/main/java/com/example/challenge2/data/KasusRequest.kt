@@ -7,7 +7,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-class KasusRequest {
     fun httpClient(): OkHttpClient {
         val logInterceptor = HttpLoggingInterceptor()
         logInterceptor.level = HttpLoggingInterceptor.Level.BODY
@@ -20,11 +19,9 @@ class KasusRequest {
     inline fun <reified T> apiRequest(okHttpClient: OkHttpClient): T {
         val gson = GsonBuilder().create()
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://covid19.mathdro.id/")
+            .baseUrl("https://api.kawalcorona.com/")
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
         return retrofit.create(T::class.java)
     }
-
-}

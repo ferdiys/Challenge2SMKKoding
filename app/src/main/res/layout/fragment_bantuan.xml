@@ -44,30 +44,6 @@
         android:background="@drawable/bg_white_radius_corner"
         android:orientation="vertical">
 
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginBottom="@dimen/_2sdp"
-            android:fontFamily="@font/eina03_bold"
-            android:text="Update Kasus Covid-19"
-            android:textColor="@color/colorTextPrimaryDark"
-            android:textSize="22sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginBottom="@dimen/_2sdp"
-            android:fontFamily="@font/eina03_regular"
-            android:text="DateNow"
-            android:textSize="16sp" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -77,103 +53,13 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/eina03_semi_bold"
-                    android:text="Kasus Positif"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorKasus"
-                    android:textSize="12sp" />
-
-                <TextView
-                    android:id="@+id/tv_kasus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/eina03_bold"
-                    android:text="00000"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorKasus"
-                    android:textSize="@dimen/_22sdp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/eina03_semi_bold"
-                    android:text="Sembuh"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorSembuh"
-                    android:textSize="12sp" />
-
-                <TextView
-                    android:id="@+id/tv_sembuh"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/eina03_bold"
-                    android:text="0000"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorSembuh"
-                    android:textSize="@dimen/_22sdp" />
-            </LinearLayout>
-
-            <LinearLayout
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/eina03_semi_bold"
-                    android:text="Meninggal"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorMeninggal"
-                    android:textSize="12sp" />
-
-                <TextView
-                    android:id="@+id/tv_meninggal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/eina03_bold"
-                    android:text="0000"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorMeninggal"
-                    android:textSize="@dimen/_22sdp" />
-            </LinearLayout>
+                android:text="Infromasi lebih lanjut melalui whatapps?"/>
 
         </LinearLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/eina03_regular"
-            android:gravity="end"
-            android:paddingTop="@dimen/_2sdp"
-            android:paddingRight="@dimen/_16sdp"
-            android:text="Lihat Detail "
-            android:textAlignment="textEnd"
-            android:textColor="@color/colorPrimary"
-            android:textSize="16sp" />
 
     </LinearLayout>
 

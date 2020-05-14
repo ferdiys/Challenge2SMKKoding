@@ -1,11 +1,10 @@
-package com.example.challenge2.utils
+package com.example.challenge2.util
 
 import android.content.Context
 import androidx.core.content.ContextCompat
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.challenge2.R
 
-class LoadingUtils {
     fun showLoading(context: Context, swipeRefreshLayout: SwipeRefreshLayout) {
         swipeRefreshLayout.setColorSchemeColors(
             ContextCompat.getColor(context,
@@ -17,4 +16,3 @@ class LoadingUtils {
         swipeRefreshLayout.isRefreshing = false
         swipeRefreshLayout.isEnabled = false
     }
-}

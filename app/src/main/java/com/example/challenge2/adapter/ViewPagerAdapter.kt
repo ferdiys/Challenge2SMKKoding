@@ -1,4 +1,4 @@
-package com.example.challenge2
+package com.example.challenge2.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
