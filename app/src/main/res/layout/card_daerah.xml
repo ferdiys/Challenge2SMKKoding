@@ -1,124 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="8dp"
-    android:layout_marginBottom="8dp"
     android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp">
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/box_data"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_provinsi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/eina03_semi_bold"
+        android:text="Daerah"
+        android:textColor="@color/colorTextPrimaryDark"
+        android:textSize="22sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_below="@+id/tv_provinsi"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/tv_provinsi"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_16sdp"
-            android:layout_marginTop="@dimen/_16sdp"
-            android:fontFamily="@font/eina03_semi_bold"
-            android:text="Daerah"
-            android:textColor="@color/colorTextPrimaryDark"
-            android:textSize="22sp" />
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/eina03_semi_bold"
+                android:text="Kasus Positif"
+                android:textAlignment="center"
+                android:textColor="@color/colorKasus"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtKasus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/eina03_bold"
+                android:text="00000"
+                android:textAlignment="center"
+                android:textColor="@color/colorKasus"
+                android:textSize="22sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/eina03_semi_bold"
+                android:text="Sembuh"
+                android:textAlignment="center"
+                android:textColor="@color/colorSembuh"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtSembuh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/eina03_bold"
+                android:text="000"
+                android:textAlignment="center"
+                android:textColor="@color/colorSembuh"
+                android:textSize="22sp" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_provinsi"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/box_data"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:padding="16dp">
 
-            <LinearLayout
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/eina03_semi_bold"
+                android:text="Meninggal"
+                android:textAlignment="center"
+                android:textColor="@color/colorMeninggal"
+                android:textSize="12sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/eina03_semi_bold"
-                    android:text="Kasus Positif"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorKasus"
-                    android:textSize="12sp" />
-
-                <TextView
-                    android:id="@+id/txtKasus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/eina03_bold"
-                    android:text="00000"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorKasus"
-                    android:textSize="@dimen/_22sdp" />
-            </LinearLayout>
-
-            <LinearLayout
+            <TextView
+                android:id="@+id/txtMeninggal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/eina03_semi_bold"
-                    android:text="Sembuh"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorSembuh"
-                    android:textSize="12sp" />
-
-                <TextView
-                    android:id="@+id/txtSembuh"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/eina03_bold"
-                    android:text="000"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorSembuh"
-                    android:textSize="@dimen/_22sdp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/eina03_semi_bold"
-                    android:text="Meninggal"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorMeninggal"
-                    android:textSize="12sp" />
-
-                <TextView
-                    android:id="@+id/txtMeninggal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/eina03_bold"
-                    android:text="0000"
-                    android:textAlignment="center"
-                    android:textColor="@color/colorMeninggal"
-                    android:textSize="@dimen/_22sdp" />
-            </LinearLayout>
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/eina03_bold"
+                android:text="0000"
+                android:textAlignment="center"
+                android:textColor="@color/colorMeninggal"
+                android:textSize="22sp" />
         </LinearLayout>
     </LinearLayout>
-
-</androidx.cardview.widget.CardView>
+</LinearLayout>

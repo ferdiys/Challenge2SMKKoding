@@ -8,9 +8,9 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackGroundWhite">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_prov"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbars="vertical"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_world"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"/>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

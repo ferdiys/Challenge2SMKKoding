@@ -12,4 +12,7 @@ interface KasusService {
     @GET("/indonesia/provinsi")
     fun getProvinsi(): Call<List<ProvinsiItem>>
 
+    @GET("/indonesia")
+    fun getIndo(): Call<List<IndoItem>>
+
 }

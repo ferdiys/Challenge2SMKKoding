@@ -6,14 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.challenge2.R
-import com.example.challenge2.data.ProvinsiItem
+import com.example.challenge2.data.KasusGlobalItem
 import kotlinx.android.synthetic.main.card_daerah.view.*
 
-class ProvinsiAdapter(
+class WorldAdapter(
     private val context: Context,
-    private val arrayList: List<ProvinsiItem>
+    private val arrayList: List<KasusGlobalItem>
 ) :
-    RecyclerView.Adapter<ProvinsiAdapter.Holder>() {
+    RecyclerView.Adapter<WorldAdapter.Holder>() {
     class Holder(val view: View) : RecyclerView.ViewHolder(view)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
@@ -24,11 +24,12 @@ class ProvinsiAdapter(
 
     override fun getItemCount(): Int = arrayList!!.size
 
+
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        holder.view.txtKasus.text = arrayList?.get(position)?.data!!.kasusPosi.toString()
-        holder.view.txtSembuh.text = arrayList?.get(position)?.data!!.kasusSemb.toString()
-        holder.view.txtMeninggal.text = arrayList?.get(position)?.data!!.kasusMeni.toString()
-        holder.view.tv_provinsi.text = arrayList?.get(position)?.data!!.provinsi.toString()
+        holder.view.txtKasus.text = arrayList?.get(position)?.attributes!!.active.toString()
+        holder.view.txtSembuh.text = arrayList?.get(position)?.attributes!!.recovered.toString()
+        holder.view.txtMeninggal.text = arrayList?.get(position)?.attributes!!.deaths.toString()
+        holder.view.tv_provinsi.text = arrayList?.get(position)?.attributes!!.countryRegion.toString()
 
     }
 }

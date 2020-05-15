@@ -11,6 +11,7 @@ import com.example.challenge2.data.httpClient
 import com.example.challenge2.util.dismissLoading
 import com.example.challenge2.util.showLoading
 import com.example.challenge2.util.tampilToast
+import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_provinsi.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -44,7 +45,7 @@ class ProvinsiActivity : AppCompatActivity() {
                     response.isSuccessful ->
                         when {
                             response.body()?.size != 0 ->
-                                tampilGithubUser(response.body()!!)
+                                tampilProvinsi(response.body()!!)
                             else -> {
                                 tampilToast(this@ProvinsiActivity, "Berhasil")
                             }
@@ -57,8 +58,13 @@ class ProvinsiActivity : AppCompatActivity() {
         })
     }
 
-    private fun tampilGithubUser(data: List<ProvinsiItem>) {
-        listProvinsi.layoutManager = LinearLayoutManager(this@ProvinsiActivity)
-        listProvinsi.adapter = ProvinsiAdapter(this@ProvinsiActivity, data)
+    private fun tampilProvinsi(data: List<ProvinsiItem>) {
+        rv_prov.layoutManager = LinearLayoutManager(this@ProvinsiActivity)
+        rv_prov.adapter = ProvinsiAdapter(this@ProvinsiActivity, data)
     }
+    override fun onDestroy() {
+        super.onDestroy()
+        this.clearFindViewByIdCache()
+    }
+
 }
