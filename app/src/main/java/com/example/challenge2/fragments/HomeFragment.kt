@@ -5,17 +5,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.SpinnerAdapter
+import android.widget.*
 import androidx.fragment.app.Fragment
 import com.example.challenge2.ProvinsiActivity
 import com.example.challenge2.R
-import com.example.challenge2.data.KasusGlobalItem
-import com.example.challenge2.data.KasusService
-import com.example.challenge2.data.apiRequest
-import com.example.challenge2.data.httpClient
+import com.example.challenge2.data.*
 import com.example.challenge2.util.dismissLoading
 import com.example.challenge2.util.tampilToast
 import kotlinx.android.synthetic.main.activity_provinsi.*
@@ -27,10 +21,10 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class HomeFragment : Fragment() {
-    var spinnerCountry: Spinner? = null
-    var countryName: ArrayList<String>? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        getData()
     }
 
     override fun onCreateView(
@@ -52,7 +46,28 @@ class HomeFragment : Fragment() {
             val intent = Intent(context, ProvinsiActivity::class.java)
             startActivity(intent)
         }
+    }
 
+
+    private fun getData() {
+        val httpClient = httpClient()
+        val apiRequest = apiRequest<KasusService>(httpClient)
+        val call = apiRequest.getIndo()
+
+        call.enqueue(object : Callback<List<IndoItem>> {
+            override fun onFailure(call: Call<List<IndoItem>>, t: Throwable) {
+                Toast.makeText(activity!!, t.message, Toast.LENGTH_LONG).show()
+            }
+
+            override fun onResponse(
+                call: Call<List<IndoItem>>,
+                response: Response<List<IndoItem>>
+            ) {
+                tv_kasus.text = response.body()!![0].positif.toString()
+                tv_sembuh.text = response.body()!![0].sembuh.toString()
+                tv_meninggal.text = response.body()!![0].meninggal.toString()
+            }
+        })
     }
 }
 

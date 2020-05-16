@@ -4,8 +4,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.content.res.ResourcesCompat
 import com.example.challenge2.adapter.ViewPagerAdapter
+import com.example.challenge2.data.*
+import com.example.challenge2.util.dismissLoading
+import com.example.challenge2.util.tampilToast
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_provinsi.*
+import kotlinx.android.synthetic.main.fragment_home.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
     val menuTeks = arrayOf("Kasus","Dunia","Informasi","Hiburan")
