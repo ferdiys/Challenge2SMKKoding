@@ -6,7 +6,7 @@ Link download APK
 [apk](https://drive.google.com/file/d/1jBIRnW7Mm-P9b_5JzuqEtD-VcmcfoEMi/view?usp=sharing)
 
 Layout / Screenshot Aplikasi
-![alt text](/Screen View/ssChallenge 2.jpg)
+![alt text](https://raw.githubusercontent.com/ferdiys/Challenge2SMKKoding/master/Screen%20View/ssChallenge%202.jpg)
 
 Penjelasan Layout (dari kiri)
 1.Tab Kasus : layout menampilkan data terupdate covid-19 di Indonesia
