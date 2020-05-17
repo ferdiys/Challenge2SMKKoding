@@ -8,10 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.challenge2.R
 import com.example.challenge2.adapter.WorldAdapter
-import com.example.challenge2.data.KasusGlobalItem
-import com.example.challenge2.data.KasusService
-import com.example.challenge2.data.apiRequest
-import com.example.challenge2.data.httpClient
+import com.example.challenge2.data.*
 import com.example.challenge2.util.dismissLoading
 import com.example.challenge2.util.tampilToast
 import kotlinx.android.synthetic.*
@@ -43,7 +40,7 @@ class WorldFragment : Fragment() {
     }
     private fun callApiGetKasus() {
         val httpClient = httpClient()
-        val apiRequest = apiRequest<KasusService>(httpClient)
+        val apiRequest = apiRequest<KasusService>(httpClient, ApiPublicList.COVID_URL)
         val call = apiRequest.getRegion()
         call.enqueue(object : Callback<List<KasusGlobalItem>> {
             override fun onFailure(call: Call<List<KasusGlobalItem>>, t: Throwable) {

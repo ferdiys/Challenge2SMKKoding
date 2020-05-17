@@ -15,4 +15,10 @@ interface KasusService {
     @GET("/indonesia")
     fun getIndo(): Call<List<IndoItem>>
 
+    @GET("/positions")
+    fun getJob(
+        @Query("location") location: String
+    ): Call<List<JobItem>>
+
+
 }

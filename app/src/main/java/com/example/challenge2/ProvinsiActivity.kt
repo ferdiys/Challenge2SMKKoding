@@ -4,10 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.challenge2.adapter.ProvinsiAdapter
-import com.example.challenge2.data.KasusService
-import com.example.challenge2.data.ProvinsiItem
-import com.example.challenge2.data.apiRequest
-import com.example.challenge2.data.httpClient
+import com.example.challenge2.data.*
 import com.example.challenge2.util.dismissLoading
 import com.example.challenge2.util.showLoading
 import com.example.challenge2.util.tampilToast
@@ -29,7 +26,7 @@ class ProvinsiActivity : AppCompatActivity() {
     private fun callApiProvinsi() {
         showLoading(this, swipeRefreshLayout)
         val httpClient = httpClient()
-        val apiRequest = apiRequest<KasusService>(httpClient)
+        val apiRequest = apiRequest<KasusService>(httpClient, ApiPublicList.COVID_URL)
         val call = apiRequest.getProvinsi()
         call.enqueue(object : Callback<List<ProvinsiItem>> {
             override fun onFailure(call: Call<List<ProvinsiItem>>, t: Throwable) {

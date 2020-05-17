@@ -16,10 +16,10 @@ import java.util.concurrent.TimeUnit
         builder.addInterceptor(logInterceptor)
         return builder.build()
     }
-    inline fun <reified T> apiRequest(okHttpClient: OkHttpClient): T {
+    inline fun <reified T> apiRequest(okHttpClient: OkHttpClient, baseUrl: String): T {
         val gson = GsonBuilder().create()
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://api.kawalcorona.com")
+            .baseUrl(baseUrl)
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
