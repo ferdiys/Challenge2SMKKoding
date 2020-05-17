@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/colorBackGroundWhite"
-    tools:context=".fragments.EntertainmentFragment">
+    tools:context=".fragments.NewsFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_job"
