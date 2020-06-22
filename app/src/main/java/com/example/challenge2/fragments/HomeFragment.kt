@@ -13,6 +13,7 @@ import com.example.challenge2.ProvinsiActivity
 import com.example.challenge2.R
 import com.example.challenge2.data.*
 import com.example.challenge2.util.dismissLoading
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import org.jetbrains.annotations.Nullable
@@ -29,7 +30,6 @@ class HomeFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getData()
-
     }
 
     override fun onCreateView(
@@ -51,6 +51,7 @@ class HomeFragment : Fragment() {
             val intent = Intent(context, ProvinsiActivity::class.java)
             startActivity(intent)
         }
+        getUser()
         val date = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS")
         val currentDate = date.format(Date())
         view.tv_date.setText(currentDate)
@@ -77,6 +78,19 @@ class HomeFragment : Fragment() {
                 tv_nasional.text = response.body()!![0].name.toString()
             }
         })
+    }
+    private fun getUser(){
+        val user = FirebaseAuth.getInstance().currentUser
+        if (user != null) {
+            user?.let {
+                for (profile in it.providerData) {
+                    val name = user.displayName
+                    tv_username.text = name.toString()
+                }
+            }
+        } else {
+            // No user is signed in
+        }
     }
 }
 
