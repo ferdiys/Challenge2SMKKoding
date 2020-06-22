@@ -16,8 +16,8 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
-    val menuTeks = arrayOf("Kasus","Dunia","Info","News")
-    val menuIcon = arrayOf(R.drawable.icon_virus, R.drawable.world, R.drawable.info, R.drawable.news)
+    val menuTeks = arrayOf("Kasus","Dunia","Info","News", "Feeds")
+    val menuIcon = arrayOf(R.drawable.icon_virus, R.drawable.world, R.drawable.info, R.drawable.news, R.drawable.hiburan)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

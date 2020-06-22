@@ -3,10 +3,7 @@ package com.example.challenge2.adapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.challenge2.fragments.WorldFragment
-import com.example.challenge2.fragments.NewsFragment
-import com.example.challenge2.fragments.HomeFragment
-import com.example.challenge2.fragments.InfoFragment
+import com.example.challenge2.fragments.*
 
 class ViewPagerAdapter(fragmentActivity: FragmentActivity) :
 
@@ -25,6 +22,9 @@ FragmentStateAdapter(fragmentActivity) {
             }
             3 -> {
                 return NewsFragment()
+            }
+            4 -> {
+                return FeedsFragment()
             }
             else -> {
                 return HomeFragment()
