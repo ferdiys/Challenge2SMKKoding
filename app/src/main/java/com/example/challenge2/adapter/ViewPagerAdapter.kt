@@ -8,7 +8,7 @@ import com.example.challenge2.fragments.*
 class ViewPagerAdapter(fragmentActivity: FragmentActivity) :
 
 FragmentStateAdapter(fragmentActivity) {
-    private val JUMLAH_MENU = 4
+    private val JUMLAH_MENU = 5
     override fun createFragment(position: Int): Fragment {
         when (position) {
             0 -> {

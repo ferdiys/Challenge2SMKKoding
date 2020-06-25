@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddFeeds">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="57dp"
+        tools:layout_editor_absoluteY="123dp">
+
+        <ImageView
+
+            android:id="@+id/iv_feed"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_launcher_background" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_camera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Camera" />
+
+            <Button
+                android:id="@+id/btn_galery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Gallery" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/edt_caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Caption"/>
+    <EditText
+        android:id="@+id/edt_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Lokasi"/>
+
+    <Button
+        android:id="@+id/btn_simpan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Simpan"
+        android:visibility="visible" />
+
+</LinearLayout>
