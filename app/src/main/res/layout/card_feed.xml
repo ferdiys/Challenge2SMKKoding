@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="16dp"
@@ -16,16 +17,16 @@
 <!--        android:layout_margin="16dp" />-->
 
     <TextView
-        android:id="@+id/tv_caption"
+        android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:fontFamily="@font/eina03_semi_bold"
+        android:fontFamily="@font/eina03_bold"
         android:textColor="@color/colorTextPrimaryDark"
         android:textSize="16dp" />
     <TextView
-        android:id="@+id/tv_location"
+        android:id="@+id/tv_caption"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"

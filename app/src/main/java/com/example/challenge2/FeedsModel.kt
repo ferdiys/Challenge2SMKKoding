@@ -6,11 +6,11 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "my_feeds")
 data class FeedsModel(
+    var title: String,
     var caption: String,
-    var location: String,
-    var image: Uri?,
+    var date: String,
     @PrimaryKey var key: String?
 ){
-    constructor() : this("","",null,null
+    constructor() : this("","","",null
     )
 }

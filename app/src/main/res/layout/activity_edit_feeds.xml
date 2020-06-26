@@ -5,13 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginLeft="20dp"
-    android:layout_marginRight="20dp"
-    android:gravity="center"
-    tools:context=".AddFeeds">
+    tools:context=".EditFeeds">
+
 
     <TextView
-        android:id="@+id/tv_date"
+        android:id="@+id/tv_date_new"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="DateNow"
@@ -20,7 +18,7 @@
         android:textSize="16sp" />
 
     <EditText
-        android:id="@+id/edt_title"
+        android:id="@+id/edt_title_new"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -28,7 +26,7 @@
         android:textSize="16sp"
         android:hint="Title"/>
     <EditText
-        android:id="@+id/edt_caption"
+        android:id="@+id/edt_caption_new"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
