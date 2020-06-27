@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.challenge2.EditFeeds
 import com.example.challenge2.FeedsModel
 import com.example.challenge2.R
+import com.example.challenge2.viewmodel.FeedsFragmentViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.extensions.LayoutContainer
@@ -70,6 +71,7 @@ class FeedsAdapter(
                                 .addOnSuccessListener {
                                     Toast.makeText(context, "Data Berhasil Dihapus",
                                         Toast.LENGTH_SHORT).show()
+//                                    viewModel.delete(data)
                                 }
                         }
 

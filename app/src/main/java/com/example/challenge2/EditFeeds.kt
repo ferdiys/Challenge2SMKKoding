@@ -6,6 +6,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.viewModels
+import com.example.challenge2.viewmodel.UpdateFeedsViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -17,6 +19,7 @@ class EditFeeds : AppCompatActivity() {
     private var newDate: TextView? = null
     private var ref: DatabaseReference? = null
     private var auth: FirebaseAuth? = null
+    private val viewModel by viewModels<UpdateFeedsViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,12 +43,13 @@ class EditFeeds : AppCompatActivity() {
                 Toast.makeText(this, "Data tidak boleh ada yang kosong",
                     Toast.LENGTH_SHORT).show();
             } else {
-                val newFeed = FeedsModel(cekTitle, cekCaption, cekDate, null)
+                val newFeed = FeedsModel(cekTitle, cekCaption, cekDate, "")
                 val getUserID: String = auth?.getCurrentUser()?.getUid().toString()
                 val getKey: String = getIntent().getStringExtra("getPrimaryKey").toString()
                 ref!!.child(getUserID).child("Feed")
                     .child(getKey).setValue(newFeed)
                     .addOnCompleteListener {
+                        viewModel.updateData(newFeed)
                         Toast.makeText(this, "Data Berhasil Disimpan",
                             Toast.LENGTH_SHORT).show()
                         finish();

@@ -9,8 +9,8 @@ data class FeedsModel(
     var title: String,
     var caption: String,
     var date: String,
-    @PrimaryKey var key: String?
+    @PrimaryKey var key: String
 ){
-    constructor() : this("","","",null
+    constructor() : this("","","",""
     )
 }

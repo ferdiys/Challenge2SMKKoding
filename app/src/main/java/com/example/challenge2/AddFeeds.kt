@@ -2,7 +2,9 @@ package com.example.challenge2
 
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.example.challenge2.viewmodel.FeedsViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -14,7 +16,7 @@ import java.util.*
 class AddFeeds : AppCompatActivity() {
     lateinit var ref: DatabaseReference
     private var auth: FirebaseAuth? = null
-
+    private val viewModel by viewModels<FeedsViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +39,7 @@ class AddFeeds : AppCompatActivity() {
         val getCaption: String = edt_caption?.getText().toString()
         val getDate: String = tv_date?.getText().toString()
         val getUserID: String = auth?.getCurrentUser()?.getUid().toString()
-        val feed = FeedsModel(getTitle, getCaption, getDate, null)
+        val feed = FeedsModel(getTitle, getCaption, getDate, "")
 
         if (getCaption.isEmpty() && getTitle.isEmpty() && getDate.isEmpty()) {
             Toast.makeText(this@AddFeeds, "Data tidak boleh ada yang kosong", Toast.LENGTH_SHORT)
@@ -50,6 +52,8 @@ class AddFeeds : AppCompatActivity() {
                         this, "Data Berhasil Disimpan",
                         Toast.LENGTH_SHORT
                     ).show()
+                    viewModel.addData(feed)
+
                 }
             finish()
         }

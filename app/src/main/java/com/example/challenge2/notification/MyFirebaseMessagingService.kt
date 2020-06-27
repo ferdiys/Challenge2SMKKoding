@@ -1,4 +1,4 @@
-package com.example.challenge2
+package com.example.challenge2.notification
 
 import android.annotation.SuppressLint
 import android.app.NotificationManager
@@ -8,6 +8,8 @@ import android.content.Intent
 import android.media.RingtoneManager
 import android.util.Log
 import androidx.core.app.NotificationCompat
+import com.example.challenge2.MainActivity
+import com.example.challenge2.R
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 
