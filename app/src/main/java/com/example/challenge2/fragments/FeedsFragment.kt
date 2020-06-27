@@ -14,6 +14,7 @@ import com.example.challenge2.AddFeeds
 import com.example.challenge2.FeedsModel
 import com.example.challenge2.R
 import com.example.challenge2.adapter.FeedsAdapter
+import com.example.challenge2.data.KasusGlobalItem
 import com.example.challenge2.util.dismissLoading
 import com.example.challenge2.util.showLoading
 import com.example.challenge2.viewmodel.FeedsFragmentViewModel
@@ -23,6 +24,7 @@ import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.fragment_feeds.*
 import kotlinx.android.synthetic.main.fragment_feeds.view.*
 import org.jetbrains.annotations.Nullable
+import java.util.ArrayList
 
 class FeedsFragment : Fragment() {
     var dataFeeds: MutableList<FeedsModel> = ArrayList()
@@ -42,14 +44,16 @@ class FeedsFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_feeds, container, false)
     }
     override fun onViewCreated(
+
         view: View,
         @Nullable savedInstanceState: Bundle?
     ) {
         super.onViewCreated(view, savedInstanceState)
+        init()
         getData()
         viewModel.init(requireContext())
         viewModel.allFeeds.observe(viewLifecycleOwner, Observer { myFeeds ->
-            myFeeds?.let { rv_feeds.adapter = FeedsAdapter(requireContext(), dataFeeds) }
+            myFeeds?.let { adapter?.setData(it) }
         })
 
         view.fab.setOnClickListener {
@@ -59,10 +63,11 @@ class FeedsFragment : Fragment() {
     }
 
     private fun init(){
-        rv_feeds.layoutManager = LinearLayoutManager(context)
-        rv_feeds.adapter = FeedsAdapter(requireContext(), dataFeeds)
-        Toast.makeText(getContext(), "Data Berhasil Dimuat", Toast.LENGTH_LONG).show()
-        dismissLoading(swipeRefreshLayout)
+            rv_feeds.layoutManager = LinearLayoutManager(context)
+            adapter = FeedsAdapter(requireContext(), dataFeeds)
+            rv_feeds.adapter = adapter
+            dismissLoading(swipeRefreshLayout)
+
     }
 
     private fun getData() {
@@ -83,7 +88,7 @@ class FeedsFragment : Fragment() {
                 for (snapshot in dataSnapshot.children) {
                     val feed = snapshot.getValue(FeedsModel::class.java)
                     feed?.key = snapshot.key.toString()
-                    dataFeeds.add(feed!!)
+                    (dataFeeds as ArrayList<FeedsModel>).add(feed!!)
                 }
                 viewModel.insertAll(dataFeeds)
             }

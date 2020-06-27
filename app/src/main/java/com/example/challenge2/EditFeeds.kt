@@ -24,6 +24,7 @@ class EditFeeds : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_feeds)
+        viewModel.init(this)
 
         getData()
 

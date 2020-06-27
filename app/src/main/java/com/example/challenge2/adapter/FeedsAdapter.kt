@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.challenge2.EditFeeds
 import com.example.challenge2.FeedsModel
 import com.example.challenge2.R
-import com.example.challenge2.viewmodel.FeedsFragmentViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.extensions.LayoutContainer
@@ -22,7 +21,7 @@ import kotlinx.android.synthetic.main.card_feed.view.*
 
 class FeedsAdapter(
     private val context: Context,
-    private val items: List<FeedsModel?>?
+    private var items: List<FeedsModel>
 
 ) :
     RecyclerView.Adapter<FeedsAdapter.ViewHolder>() {
@@ -92,5 +91,8 @@ class FeedsAdapter(
             itemView.tv_caption.text = item!!.caption
         }
 
+    }
+    fun setData(list: List<FeedsModel>){
+        this.items = list
     }
 }

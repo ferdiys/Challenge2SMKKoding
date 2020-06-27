@@ -17,8 +17,8 @@ class FeedsViewModel() : ViewModel() {
         repository = FeedsRepo(feedsDao)
     }
 
-    fun addData(myFeeds: FeedsModel) =
+    fun addData(myFeed: FeedsModel) =
         viewModelScope.launch(Dispatchers.IO) {
-            repository.insert(myFeeds)
+            repository.insert(myFeed)
         }
 }

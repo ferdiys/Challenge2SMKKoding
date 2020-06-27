@@ -25,6 +25,7 @@ class AddFeeds : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         val date = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS")
         val currentDate = date.format(Date())
+        viewModel.init(this)
         tv_date.setText(currentDate)
 
 
@@ -39,13 +40,13 @@ class AddFeeds : AppCompatActivity() {
         val getCaption: String = edt_caption?.getText().toString()
         val getDate: String = tv_date?.getText().toString()
         val getUserID: String = auth?.getCurrentUser()?.getUid().toString()
-        val feed = FeedsModel(getTitle, getCaption, getDate, "")
+
 
         if (getCaption.isEmpty() && getTitle.isEmpty() && getDate.isEmpty()) {
             Toast.makeText(this@AddFeeds, "Data tidak boleh ada yang kosong", Toast.LENGTH_SHORT)
                 .show()
         } else {
-
+            val feed = FeedsModel(getTitle, getCaption, getDate, "")
             ref.child(getUserID).child("Feed").push().setValue(feed)
                 .addOnCompleteListener {
                     Toast.makeText(

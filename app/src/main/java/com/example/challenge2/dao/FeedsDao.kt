@@ -10,16 +10,16 @@ interface FeedsDao {
     fun getAllFeeds(): LiveData<List<FeedsModel>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(myFeeds: FeedsModel)
+    suspend fun insert(myFeed: FeedsModel)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(myFeeds: List<FeedsModel>)
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun update(myFeeds: FeedsModel)
+    suspend fun update(myFeed: FeedsModel)
 
     @Delete()
-    suspend fun delete(myFeeds: FeedsModel)
+    suspend fun delete(myFeed: FeedsModel)
 
     @Query("DELETE FROM my_feeds")
     suspend fun deleteAll()

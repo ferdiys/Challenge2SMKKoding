@@ -11,24 +11,24 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class FeedsFragmentViewModel : ViewModel(){
-
     lateinit var repository: FeedsRepo
     lateinit var allFeeds: LiveData<List<FeedsModel>>
+
     fun init(context: Context) {
         val feedsDao = FeedsDatabase.getDatabase(context).feedsDao()
         repository = FeedsRepo(feedsDao)
         allFeeds = repository.allFeeds
     }
-    fun delete(myFeeds: FeedsModel) = viewModelScope.launch(Dispatchers.IO) {
-        repository.delete(myFeeds)
+    fun delete(myFeed: FeedsModel) = viewModelScope.launch(Dispatchers.IO) {
+        repository.delete(myFeed)
     }
     /**
      * Launching a new coroutine to insert the data in a non-blocking way
      */
-    fun insertAll(myFriends: List<FeedsModel>) =
+    fun insertAll(myFeeds: List<FeedsModel>) =
         viewModelScope.launch(Dispatchers.IO) {
             repository.deleteAll()
-            repository.insertAll(myFriends)
+            repository.insertAll(myFeeds)
         }
 
 }
