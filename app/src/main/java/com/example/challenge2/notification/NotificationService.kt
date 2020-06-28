@@ -69,8 +69,8 @@ class NotificationService : IntentService("NotificationService") {
             var notificationManager: NotificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             val notifyIntent = Intent(this, SplashScreen::class.java)
 
-            val title = "Sample Notification"
-            val message = "You have received a sample notification. This notification will take you to the details page."
+            val title = "INI NOTIFIKASI"
+            val message = "#dirumahaja disuruh pemerintah, jangan membantah nanti kena denda, pakai masker biar susah bicara, skrrtt bang bang"
 
             notifyIntent.putExtra("title", title)
             notifyIntent.putExtra("message", message)

@@ -18,8 +18,8 @@ import retrofit2.Response
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
-    val menuTeks = arrayOf("Kasus","Dunia","Info","News", "Feeds")
-    val menuIcon = arrayOf(R.drawable.icon_virus, R.drawable.world, R.drawable.info, R.drawable.news, R.drawable.hiburan)
+    val menuTeks = arrayOf("Kasus","Dunia","Info","News", "Note")
+    val menuIcon = arrayOf(R.drawable.icon_virus, R.drawable.world, R.drawable.info, R.drawable.news, R.drawable.notepad)
     private val mNotificationTime = Calendar.getInstance().timeInMillis + 5000 //Set after 5 seconds from the current time.
     private var mNotified = false
 

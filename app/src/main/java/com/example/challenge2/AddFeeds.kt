@@ -23,7 +23,7 @@ class AddFeeds : AppCompatActivity() {
         setContentView(R.layout.activity_add_feeds)
         ref = FirebaseDatabase.getInstance().getReference()
         auth = FirebaseAuth.getInstance()
-        val date = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS")
+        val date = SimpleDateFormat("yyyy-MM-dd HH:mm")
         val currentDate = date.format(Date())
         viewModel.init(this)
         tv_date.setText(currentDate)
@@ -53,8 +53,6 @@ class AddFeeds : AppCompatActivity() {
                         this, "Data Berhasil Disimpan",
                         Toast.LENGTH_SHORT
                     ).show()
-                    viewModel.addData(feed)
-
                 }
             finish()
         }

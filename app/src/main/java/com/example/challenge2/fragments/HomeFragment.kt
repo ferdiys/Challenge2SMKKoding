@@ -1,18 +1,16 @@
 package com.example.challenge2.fragments
 
+import android.animation.ValueAnimator
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
-import androidx.annotation.RequiresApi
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.challenge2.ProvinsiActivity
 import com.example.challenge2.R
 import com.example.challenge2.data.*
-import com.example.challenge2.util.dismissLoading
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
@@ -21,9 +19,8 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.text.SimpleDateFormat
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 import java.util.*
+
 
 class HomeFragment : Fragment() {
 

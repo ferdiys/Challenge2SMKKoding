@@ -68,8 +68,8 @@ class WorldFragment : Fragment() {
         })
     }
     private fun tampilWorld(data: List<KasusGlobalItem>) {
-        rv_world.layoutManager = LinearLayoutManager(context!!)
-        rv_world.adapter = WorldAdapter(context!!, data)
+        rv_world.layoutManager = LinearLayoutManager(requireContext())
+        rv_world.adapter = WorldAdapter(requireContext(), data)
     }
     override fun onDestroy() {
         super.onDestroy()

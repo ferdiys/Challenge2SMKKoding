@@ -4,19 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:layout_marginLeft="20dp"
     android:layout_marginRight="20dp"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".AddFeeds">
 
     <TextView
         android:id="@+id/tv_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="DateNow"
         android:layout_margin="10dp"
         android:fontFamily="@font/eina03_semi_bold"
+        android:text="DateNow"
         android:textSize="16sp" />
 
     <EditText
@@ -25,25 +25,29 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:fontFamily="@font/eina03_semi_bold"
-        android:textSize="16sp"
-        android:hint="Title"/>
+        android:hint="Title"
+        android:textSize="16sp" />
+
     <EditText
         android:id="@+id/edt_caption"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:fontFamily="@font/eina03_semi_bold"
-        android:textSize="16sp"
-        android:inputType="textImeMultiLine"
-        android:hint="Write your day here"/>
+        android:hint="Write your day here"
+        android:inputType="textMultiLine"
+        android:lines="5"
+        android:scrollbars="vertical"
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/btn_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Simpan"
+        android:background="@drawable/button"
         android:fontFamily="@font/eina03_semi_bold"
+        android:text="Simpan"
         android:visibility="visible" />
 
 </LinearLayout>

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     tools:context=".EditFeeds">
 
 
@@ -27,12 +28,14 @@
         android:hint="Title"/>
     <EditText
         android:id="@+id/edt_caption_new"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:fontFamily="@font/eina03_semi_bold"
         android:textSize="16sp"
-        android:inputType="textImeMultiLine"
+        android:inputType="textMultiLine"
+        android:lines="5"
+        android:scrollbars="vertical"
         android:hint="Write your day here"/>
 
     <Button
@@ -41,6 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="Simpan"
+        android:background="@drawable/button"
         android:fontFamily="@font/eina03_semi_bold"
         android:visibility="visible" />
 
